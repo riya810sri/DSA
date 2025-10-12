@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Palindrome {
     public static boolean isPalindrome(String s,int i,int j){
         // base case
-        if(i>j){
+        if(i>=j){
             return true;
         }
         // self work
