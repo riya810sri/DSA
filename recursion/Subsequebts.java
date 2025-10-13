@@ -17,10 +17,32 @@ public class Subsequebts {
             list.add(ss);
             list.add(ch+ss);
          }
-
+        
         return list;
         
     }
+
+    // print without storing in arraylist 
+
+     public static void returnSubseqent2(String s,String ans){
+        if(s.length()==0){
+              System.out.print(ans);
+              return ;
+        }
+        char ch=s.charAt(0);
+
+        // recursive work 
+        String sc=s.substring(1);
+         
+        // current character not included
+        returnSubseqent2(sc, ans);
+
+
+        // current character included
+        returnSubseqent2(sc, ans+ch);
+        
+    }
+
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.print("enter a string: ");
@@ -29,6 +51,8 @@ public class Subsequebts {
        for(String ss:list){
         System.out.print(ss);
        }
+       System.out.println();
+       returnSubseqent2(s, " ");
        sc.close();
     }
 }
